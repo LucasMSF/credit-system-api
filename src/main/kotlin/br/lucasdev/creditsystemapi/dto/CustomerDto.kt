@@ -22,4 +22,16 @@ data class CustomerDto(
             street = this.street
         )
     )
+
+    fun toEntity(id: Long): Customer = Customer(
+        id = id,
+        firstName = this.firstName,
+        lastName = this.lastName,
+        cpf = this.cpf,
+        email = this.email,
+        address = Address(
+            zipCode = this.zipCode,
+            street = this.street
+        )
+    )
 }

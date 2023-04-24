@@ -18,11 +18,11 @@ data class Customer(
     @Column(nullable = false)
     @Embedded
     var address: Address = Address(),
-    @Column(nullable = false, unique = true)
+//    @Column(nullable = false, unique = true)
     @OneToMany(
+        targetEntity = Credit::class,
         fetch = FetchType.LAZY,
-        cascade = [CascadeType.REMOVE],
-        mappedBy = "customer"
+        cascade = [CascadeType.REMOVE]
         )
     var credits: List<Credit> = mutableListOf()
 )

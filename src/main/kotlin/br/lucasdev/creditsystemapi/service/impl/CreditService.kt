@@ -4,9 +4,11 @@ import br.lucasdev.creditsystemapi.model.Credit
 import br.lucasdev.creditsystemapi.repository.CreditRepository
 import br.lucasdev.creditsystemapi.service.ICreditService
 import br.lucasdev.creditsystemapi.service.ICustomerService
+import org.springframework.stereotype.Service
 import java.lang.Exception
 import java.util.*
 
+@Service
 class CreditService(
     private val creditRepository: CreditRepository,
     private val customerService: ICustomerService

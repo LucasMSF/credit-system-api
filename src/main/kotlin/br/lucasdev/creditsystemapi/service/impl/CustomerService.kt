@@ -18,6 +18,7 @@ class CustomerService(
             throw Exception("Not Found")
         }
     override fun delete(customerId: Long): Unit {
-        this.customerRepository.deleteById(customerId)
+        val customer: Customer = this.findById(customerId)
+        this.customerRepository.deleteById(customer.id!!)
     }
 }
